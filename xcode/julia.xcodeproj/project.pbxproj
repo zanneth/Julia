@@ -1,0 +1,213 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A8A16A91D1A009C37B4 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C6D0A7616A91CDA009C37B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C6D0A7816A91CDA009C37B4 /* julia */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = julia; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6D0A8A16A91D1A009C37B4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C6D0A7516A91CDA009C37B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C6D0A6D16A91CDA009C37B4 = {
+			isa = PBXGroup;
+			children = (
+				0C6D0A8916A91D1A009C37B4 /* src */,
+				0C6D0A7916A91CDA009C37B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C6D0A7916A91CDA009C37B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C6D0A7816A91CDA009C37B4 /* julia */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C6D0A8916A91D1A009C37B4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0C6D0A8A16A91D1A009C37B4 /* main.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C6D0A7716A91CDA009C37B4 /* julia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6D0A8216A91CDA009C37B4 /* Build configuration list for PBXNativeTarget "julia" */;
+			buildPhases = (
+				0C6D0A7416A91CDA009C37B4 /* Sources */,
+				0C6D0A7516A91CDA009C37B4 /* Frameworks */,
+				0C6D0A7616A91CDA009C37B4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = julia;
+			productName = julia;
+			productReference = 0C6D0A7816A91CDA009C37B4 /* julia */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C6D0A6F16A91CDA009C37B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Charles Magahern";
+			};
+			buildConfigurationList = 0C6D0A7216A91CDA009C37B4 /* Build configuration list for PBXProject "julia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C6D0A6D16A91CDA009C37B4;
+			productRefGroup = 0C6D0A7916A91CDA009C37B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C6D0A7716A91CDA009C37B4 /* julia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C6D0A7416A91CDA009C37B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C6D0A8016A91CDA009C37B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0C6D0A8116A91CDA009C37B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0C6D0A8316A91CDA009C37B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C6D0A8416A91CDA009C37B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C6D0A7216A91CDA009C37B4 /* Build configuration list for PBXProject "julia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6D0A8016A91CDA009C37B4 /* Debug */,
+				0C6D0A8116A91CDA009C37B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6D0A8216A91CDA009C37B4 /* Build configuration list for PBXNativeTarget "julia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6D0A8316A91CDA009C37B4 /* Debug */,
+				0C6D0A8416A91CDA009C37B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C6D0A6F16A91CDA009C37B4 /* Project object */;
+}
