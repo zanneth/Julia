@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A8A16A91D1A009C37B4 /* main.cpp */; };
+		0C6D0A9216A91FBA009C37B4 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A9016A91FBA009C37B4 /* window.cpp */; };
+		0C6D0A9A16A9258D009C37B4 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A9816A9258D009C37B4 /* application.cpp */; };
+		0C6D0AA316A92BEA009C37B4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */; };
+		0C6D0AA516A92BEF009C37B4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA416A92BEF009C37B4 /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,13 @@
 /* Begin PBXFileReference section */
 		0C6D0A7816A91CDA009C37B4 /* julia */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = julia; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6D0A8A16A91D1A009C37B4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0C6D0A9016A91FBA009C37B4 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		0C6D0A9116A91FBA009C37B4 /* window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
+		0C6D0A9816A9258D009C37B4 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
+		0C6D0A9916A9258D009C37B4 /* application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = application.hpp; sourceTree = "<group>"; };
+		0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		0C6D0AA416A92BEF009C37B4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		0C6D0AA616A92C36009C37B4 /* gl_includes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gl_includes.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6D0AA516A92BEF009C37B4 /* GLUT.framework in Frameworks */,
+				0C6D0AA316A92BEA009C37B4 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				0C6D0A8916A91D1A009C37B4 /* src */,
+				0C6D0A8F16A91E2E009C37B4 /* Libraries and Frameworks */,
 				0C6D0A7916A91CDA009C37B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,9 +72,23 @@
 			isa = PBXGroup;
 			children = (
 				0C6D0A8A16A91D1A009C37B4 /* main.cpp */,
+				0C6D0AA616A92C36009C37B4 /* gl_includes.hpp */,
+				0C6D0A9916A9258D009C37B4 /* application.hpp */,
+				0C6D0A9816A9258D009C37B4 /* application.cpp */,
+				0C6D0A9116A91FBA009C37B4 /* window.hpp */,
+				0C6D0A9016A91FBA009C37B4 /* window.cpp */,
 			);
 			name = src;
 			path = ../src;
+			sourceTree = "<group>";
+		};
+		0C6D0A8F16A91E2E009C37B4 /* Libraries and Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C6D0AA416A92BEF009C37B4 /* GLUT.framework */,
+				0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */,
+			);
+			name = "Libraries and Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */,
+				0C6D0A9216A91FBA009C37B4 /* window.cpp in Sources */,
+				0C6D0A9A16A9258D009C37B4 /* application.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +205,7 @@
 		0C6D0A8316A91CDA009C37B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -182,6 +213,7 @@
 		0C6D0A8416A91CDA009C37B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
