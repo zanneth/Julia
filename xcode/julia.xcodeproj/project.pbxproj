@@ -13,7 +13,6 @@
 		0CFC1AFB16AB78960045B764 /* fractal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF216AB78960045B764 /* fractal.cpp */; };
 		0CFC1AFC16AB78960045B764 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF516AB78960045B764 /* main.cpp */; };
 		0CFC1AFD16AB78960045B764 /* shader_program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF616AB78960045B764 /* shader_program.cpp */; };
-		0CFC1AFE16AB78960045B764 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF816AB78960045B764 /* window.cpp */; };
 		0CFC1B0616AB85640045B764 /* julia_fragment.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0CFC1B0416AB80B10045B764 /* julia_fragment.glsl */; };
 		0CFC1B0716AB85640045B764 /* vertex.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0CFC1B0316AB80770045B764 /* vertex.glsl */; };
 		0CFC1B0A16AB8E1D0045B764 /* julia_fractal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1B0816AB8E1D0045B764 /* julia_fractal.cpp */; };
@@ -45,8 +44,6 @@
 		0CFC1AF516AB78960045B764 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0CFC1AF616AB78960045B764 /* shader_program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader_program.cpp; sourceTree = "<group>"; };
 		0CFC1AF716AB78960045B764 /* shader_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader_program.h; sourceTree = "<group>"; };
-		0CFC1AF816AB78960045B764 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
-		0CFC1AF916AB78960045B764 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
 		0CFC1B0316AB80770045B764 /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		0CFC1B0416AB80B10045B764 /* julia_fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = julia_fragment.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		0CFC1B0816AB8E1D0045B764 /* julia_fractal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = julia_fractal.cpp; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 				0CFC1AF516AB78960045B764 /* main.cpp */,
 				0CFC1AF716AB78960045B764 /* shader_program.h */,
 				0CFC1AF616AB78960045B764 /* shader_program.cpp */,
-				0CFC1AF916AB78960045B764 /* window.h */,
-				0CFC1AF816AB78960045B764 /* window.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -178,7 +173,6 @@
 				0CFC1AFB16AB78960045B764 /* fractal.cpp in Sources */,
 				0CFC1AFC16AB78960045B764 /* main.cpp in Sources */,
 				0CFC1AFD16AB78960045B764 /* shader_program.cpp in Sources */,
-				0CFC1AFE16AB78960045B764 /* window.cpp in Sources */,
 				0CFC1B0A16AB8E1D0045B764 /* julia_fractal.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

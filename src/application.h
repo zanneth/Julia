@@ -9,7 +9,6 @@
 
 #include <string>
 #include <vector>
-#include "window.h"
 
 namespace julia {
 
@@ -27,11 +26,12 @@ private:
     Application();
     ~Application();
     
+    void _initialize_glut(int argc, char **argv);
     void _initialize_callbacks();
 
 protected:
     std::vector<std::string> _arguments;
-    Window _main_window;
+    unsigned _glut_window_handle;
     Fractal *_current_fractal;
 };
 

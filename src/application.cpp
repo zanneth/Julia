@@ -24,9 +24,7 @@ Application* Application::instance()
 
 Application::Application() :
     _current_fractal(nullptr)
-{
-    _main_window.set_title("julia");
-}
+{}
 
 Application::~Application()
 {
@@ -42,8 +40,7 @@ void Application::run(int argc, const char **argv)
     }
     
     // initial setup
-    glutInit(&argc, const_cast<char**>(argv));
-    _main_window.initialize();
+    _initialize_glut(argc, const_cast<char**>(argv));
     _initialize_callbacks();
     
     // load a fractal
@@ -71,6 +68,14 @@ void Application::reshape_callback(int width, int height)
 }
 
 #pragma mark - Internal
+
+void Application::_initialize_glut(int argc, char **argv)
+{
+    glutInit(&argc, const_cast<char**>(argv));
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
+    glutInitWindowSize(1024, 768);
+    _glut_window_handle = glutCreateWindow("julia");
+}
 
 void Application::_initialize_callbacks()
 {
