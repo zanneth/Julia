@@ -26,7 +26,7 @@ struct color_palette {
 /* constants */
 const float ESCAPE_RADIUS = 2.0;
 const int NUM_CYCLES = 100;
-const complex JULIA_CONSTANT = complex(-0.3, 0.6); /* can be any arbitrary value */
+const complex JULIA_CONSTANT = complex(-0.47, 0.56); /* can be any arbitrary value */
 
 complex add_complex(complex c1, complex c2)
 {
@@ -66,10 +66,16 @@ vec3 compute_color(complex pt, color_palette palette)
        does, calculate how quickly it escaped based on its distance after stopping. */
     complex result = pt;
     bool did_escape = false;
+    float initial_distance = distance_complex(pt);
+    float first_step_distance = 0.0;
     for (int i = 0; i < NUM_CYCLES; ++i) {
         apply_function(result);
         
         float distance = distance_complex(result);
+        if (i == 0) {
+            first_step_distance = distance;
+        }
+        
         if (distance >= ESCAPE_RADIUS) {
             did_escape = true;
             break;
@@ -80,7 +86,8 @@ vec3 compute_color(complex pt, color_palette palette)
         /* value is bounded with this function. color the pixel black */
         final_color = vec3(0.0, 0.0, 0.0);
     } else {
-        final_color = vec3(0.0, 0.0, 1.0);
+        float interp_weight = (first_step_distance - initial_distance) / first_step_distance;
+        final_color = mix(palette.begin_color, palette.end_color, interp_weight);
     }
     
     return final_color;
