@@ -7,35 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A8A16A91D1A009C37B4 /* main.cpp */; };
-		0C6D0A9216A91FBA009C37B4 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A9016A91FBA009C37B4 /* window.cpp */; };
-		0C6D0A9A16A9258D009C37B4 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D0A9816A9258D009C37B4 /* application.cpp */; };
 		0C6D0AA316A92BEA009C37B4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */; };
 		0C6D0AA516A92BEF009C37B4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA416A92BEF009C37B4 /* GLUT.framework */; };
+		0CFC1AFA16AB78960045B764 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF016AB78960045B764 /* application.cpp */; };
+		0CFC1AFB16AB78960045B764 /* fractal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF216AB78960045B764 /* fractal.cpp */; };
+		0CFC1AFC16AB78960045B764 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF516AB78960045B764 /* main.cpp */; };
+		0CFC1AFD16AB78960045B764 /* shader_program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF616AB78960045B764 /* shader_program.cpp */; };
+		0CFC1AFE16AB78960045B764 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF816AB78960045B764 /* window.cpp */; };
+		0CFC1B0616AB85640045B764 /* julia_fragment.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0CFC1B0416AB80B10045B764 /* julia_fragment.glsl */; };
+		0CFC1B0716AB85640045B764 /* vertex.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0CFC1B0316AB80770045B764 /* vertex.glsl */; };
+		0CFC1B0A16AB8E1D0045B764 /* julia_fractal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1B0816AB8E1D0045B764 /* julia_fractal.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0C6D0A7616A91CDA009C37B4 /* CopyFiles */ = {
+		0CFC1B0516AB85470045B764 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = shaders;
+			dstSubfolderSpec = 16;
 			files = (
+				0CFC1B0616AB85640045B764 /* julia_fragment.glsl in CopyFiles */,
+				0CFC1B0716AB85640045B764 /* vertex.glsl in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C6D0A7816A91CDA009C37B4 /* julia */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = julia; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C6D0A8A16A91D1A009C37B4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		0C6D0A9016A91FBA009C37B4 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
-		0C6D0A9116A91FBA009C37B4 /* window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
-		0C6D0A9816A9258D009C37B4 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
-		0C6D0A9916A9258D009C37B4 /* application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = application.hpp; sourceTree = "<group>"; };
 		0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		0C6D0AA416A92BEF009C37B4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		0C6D0AA616A92C36009C37B4 /* gl_includes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gl_includes.hpp; sourceTree = "<group>"; };
+		0CFC1AF016AB78960045B764 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
+		0CFC1AF116AB78960045B764 /* application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = application.h; sourceTree = "<group>"; };
+		0CFC1AF216AB78960045B764 /* fractal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fractal.cpp; sourceTree = "<group>"; };
+		0CFC1AF316AB78960045B764 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		0CFC1AF416AB78960045B764 /* gl_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_includes.h; sourceTree = "<group>"; };
+		0CFC1AF516AB78960045B764 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0CFC1AF616AB78960045B764 /* shader_program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader_program.cpp; sourceTree = "<group>"; };
+		0CFC1AF716AB78960045B764 /* shader_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader_program.h; sourceTree = "<group>"; };
+		0CFC1AF816AB78960045B764 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		0CFC1AF916AB78960045B764 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		0CFC1B0316AB80770045B764 /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		0CFC1B0416AB80B10045B764 /* julia_fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = julia_fragment.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		0CFC1B0816AB8E1D0045B764 /* julia_fractal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = julia_fractal.cpp; sourceTree = "<group>"; };
+		0CFC1B0916AB8E1D0045B764 /* julia_fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = julia_fractal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +69,8 @@
 		0C6D0A6D16A91CDA009C37B4 = {
 			isa = PBXGroup;
 			children = (
-				0C6D0A8916A91D1A009C37B4 /* src */,
+				0CFC1B0216AB806A0045B764 /* shaders */,
+				0CFC1AEF16AB78960045B764 /* src */,
 				0C6D0A8F16A91E2E009C37B4 /* Libraries and Frameworks */,
 				0C6D0A7916A91CDA009C37B4 /* Products */,
 			);
@@ -68,20 +84,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C6D0A8916A91D1A009C37B4 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				0C6D0A8A16A91D1A009C37B4 /* main.cpp */,
-				0C6D0AA616A92C36009C37B4 /* gl_includes.hpp */,
-				0C6D0A9916A9258D009C37B4 /* application.hpp */,
-				0C6D0A9816A9258D009C37B4 /* application.cpp */,
-				0C6D0A9116A91FBA009C37B4 /* window.hpp */,
-				0C6D0A9016A91FBA009C37B4 /* window.cpp */,
-			);
-			name = src;
-			path = ../src;
-			sourceTree = "<group>";
-		};
 		0C6D0A8F16A91E2E009C37B4 /* Libraries and Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +91,36 @@
 				0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */,
 			);
 			name = "Libraries and Frameworks";
+			sourceTree = "<group>";
+		};
+		0CFC1AEF16AB78960045B764 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC1AF116AB78960045B764 /* application.h */,
+				0CFC1AF016AB78960045B764 /* application.cpp */,
+				0CFC1AF316AB78960045B764 /* fractal.h */,
+				0CFC1AF216AB78960045B764 /* fractal.cpp */,
+				0CFC1B0916AB8E1D0045B764 /* julia_fractal.h */,
+				0CFC1B0816AB8E1D0045B764 /* julia_fractal.cpp */,
+				0CFC1AF416AB78960045B764 /* gl_includes.h */,
+				0CFC1AF516AB78960045B764 /* main.cpp */,
+				0CFC1AF716AB78960045B764 /* shader_program.h */,
+				0CFC1AF616AB78960045B764 /* shader_program.cpp */,
+				0CFC1AF916AB78960045B764 /* window.h */,
+				0CFC1AF816AB78960045B764 /* window.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		0CFC1B0216AB806A0045B764 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC1B0416AB80B10045B764 /* julia_fragment.glsl */,
+				0CFC1B0316AB80770045B764 /* vertex.glsl */,
+			);
+			name = shaders;
+			path = ../shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,7 +132,7 @@
 			buildPhases = (
 				0C6D0A7416A91CDA009C37B4 /* Sources */,
 				0C6D0A7516A91CDA009C37B4 /* Frameworks */,
-				0C6D0A7616A91CDA009C37B4 /* CopyFiles */,
+				0CFC1B0516AB85470045B764 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -142,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C6D0A8B16A91D1A009C37B4 /* main.cpp in Sources */,
-				0C6D0A9216A91FBA009C37B4 /* window.cpp in Sources */,
-				0C6D0A9A16A9258D009C37B4 /* application.cpp in Sources */,
+				0CFC1AFA16AB78960045B764 /* application.cpp in Sources */,
+				0CFC1AFB16AB78960045B764 /* fractal.cpp in Sources */,
+				0CFC1AFC16AB78960045B764 /* main.cpp in Sources */,
+				0CFC1AFD16AB78960045B764 /* shader_program.cpp in Sources */,
+				0CFC1AFE16AB78960045B764 /* window.cpp in Sources */,
+				0CFC1B0A16AB8E1D0045B764 /* julia_fractal.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				OTHER_CFLAGS = "-Wall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				OTHER_CFLAGS = "-Wall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

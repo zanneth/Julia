@@ -5,7 +5,7 @@
  * Date Created: 01/17/2013
  */
 
-#include "application.hpp"
+#include "application.h"
 
 int main(int argc, const char **argv)
 {

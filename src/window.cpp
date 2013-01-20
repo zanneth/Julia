@@ -5,8 +5,8 @@
  * Date Created: 01/17/2013
  */
 
-#include "window.hpp"
-#include "gl_includes.hpp"
+#include "window.h"
+#include "gl_includes.h"
 
 namespace julia {
 

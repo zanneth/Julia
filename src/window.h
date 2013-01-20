@@ -1,5 +1,5 @@
 /*
- * window.hpp
+ * window.h
  *
  * Author: Charles Magahern <charles@magahern.com>
  * Date Created: 01/17/2013
