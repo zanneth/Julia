@@ -76,7 +76,7 @@ void Application::_initialize_glut(int argc, char **argv)
     glutInit(&argc, const_cast<char**>(argv));
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(_viewport_size.first, _viewport_size.second);
-    _glut_window_handle = glutCreateWindow("julia");
+    _glut_window_handle = glutCreateWindow("Julia");
 }
 
 void Application::_initialize_callbacks()
