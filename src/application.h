@@ -8,6 +8,7 @@
 #pragma once
 
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace julia {
@@ -17,6 +18,8 @@ class Fractal;
 class Application {
 public:
     static Application* instance();
+    
+    std::pair<unsigned, unsigned> get_viewport_size() const { return _viewport_size; }
     
     void run(int argc, const char **argv);
     void display_callback();
@@ -31,6 +34,7 @@ private:
 
 protected:
     std::vector<std::string> _arguments;
+    std::pair<unsigned, unsigned> _viewport_size;
     unsigned _glut_window_handle;
     Fractal *_current_fractal;
 };

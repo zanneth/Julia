@@ -18,6 +18,10 @@ public:
     ~JuliaFractal();
     
     void load_shaders(ShaderProgramRef program) override;
+    void before_draw() override;
+    
+private:
+    GLuint _viewport_size_uniform;
 };
 
 } // namespace julia

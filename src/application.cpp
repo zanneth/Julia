@@ -23,6 +23,7 @@ Application* Application::instance()
 }
 
 Application::Application() :
+    _viewport_size({ 1024, 768 }),
     _current_fractal(nullptr)
 {}
 
@@ -64,6 +65,7 @@ void Application::display_callback()
 
 void Application::reshape_callback(int width, int height)
 {
+    _viewport_size = { width, height };
     glViewport(0, 0, (GLsizei) width, (GLsizei) height);
 }
 
@@ -73,7 +75,7 @@ void Application::_initialize_glut(int argc, char **argv)
 {
     glutInit(&argc, const_cast<char**>(argv));
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
-    glutInitWindowSize(1024, 768);
+    glutInitWindowSize(_viewport_size.first, _viewport_size.second);
     _glut_window_handle = glutCreateWindow("julia");
 }
 

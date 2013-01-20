@@ -24,8 +24,12 @@ public:
     Fractal();
     virtual ~Fractal();
     
+    ShaderProgramRef get_shader_program() const { return _shader_program; }
+    
+    virtual void before_draw() {}
+    virtual void after_draw() {}
     virtual void load_shaders(ShaderProgramRef program) {}
-    virtual void draw();
+    void draw();
 
 private:
     void _setup_buffers();
@@ -33,9 +37,8 @@ private:
 
 private:
     GLuint _vertex_buffers[JULIA_NUM_BUFFERS];
-    bool _buffers_initialized;
-    
     ShaderProgramRef _shader_program;
+    bool _buffers_initialized;
     bool _shaders_initialized;
 };
 
