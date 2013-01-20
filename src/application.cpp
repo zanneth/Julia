@@ -16,18 +16,16 @@
 
 namespace julia {
 
-static Application *__currentapp = nullptr;
+Application* Application::instance()
+{
+    static Application __currentapp;
+    return &__currentapp;
+}
 
-Application::Application(int argc, const char **argv) :
+Application::Application() :
     _current_fractal(nullptr)
 {
-    for (unsigned i = 0; i < argc; ++i) {
-        _arguments.push_back(argv[i]);
-    }
-    
     _main_window.set_title("julia");
-    
-    _current_fractal = new JuliaFractal();
 }
 
 Application::~Application()
@@ -37,12 +35,21 @@ Application::~Application()
     }
 }
 
-void Application::run()
+void Application::run(int argc, const char **argv)
 {
-    _initialize_glut();
+    for (unsigned i = 0; i < argc; ++i) {
+        _arguments.push_back(argv[i]);
+    }
+    
+    // initial setup
+    glutInit(&argc, const_cast<char**>(argv));
     _main_window.initialize();
     _initialize_callbacks();
     
+    // load a fractal
+    _current_fractal = new JuliaFractal();
+    
+    // start main run loop
     glutMainLoop();
 }
 
@@ -65,20 +72,10 @@ void Application::reshape_callback(int width, int height)
 
 #pragma mark - Internal
 
-void Application::_initialize_glut()
-{
-    int argc = (int) _arguments.size();
-    const char *argv[argc];
-    unsigned i = 0;
-    for (std::string arg : _arguments) { argv[i++] = arg.c_str(); }
-    glutInit(&argc, const_cast<char**>(argv));
-}
-
 void Application::_initialize_callbacks()
 {
-    __currentapp = this;
-    glutDisplayFunc([]{ __currentapp->display_callback(); });
-    glutReshapeFunc([](int width, int height){ __currentapp->reshape_callback(width, height); });
+    glutDisplayFunc([]{ Application::instance()->display_callback(); });
+    glutReshapeFunc([](int width, int height){ Application::instance()->reshape_callback(width, height); });
 }
 
 } // namespace julia

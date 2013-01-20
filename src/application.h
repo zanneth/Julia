@@ -17,15 +17,16 @@ class Fractal;
 
 class Application {
 public:
-    Application(int argc = 0, const char **argv = nullptr);
-    ~Application();
+    static Application* instance();
     
-    void run();
+    void run(int argc, const char **argv);
     void display_callback();
     void reshape_callback(int width, int height);
     
 private:
-    void _initialize_glut();
+    Application();
+    ~Application();
+    
     void _initialize_callbacks();
 
 protected:

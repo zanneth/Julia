@@ -9,8 +9,8 @@
 
 int main(int argc, const char **argv)
 {
-    julia::Application application(argc, argv);
-    application.run();
+    julia::Application *app = julia::Application::instance();
+    app->run(argc, argv);
     
     return 0;
 }
