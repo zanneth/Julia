@@ -1,0 +1,7 @@
+Julia
+========================================
+Julia is a application for generating fractals. Fractal sets are computed on the
+GPU using shader programs.
+
+Written by Charles Magahern <charles@magahern.com>
+
