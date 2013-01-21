@@ -29,7 +29,9 @@ Fractal::Fractal() :
 {}
 
 Fractal::~Fractal()
-{}
+{
+    glDeleteBuffers(2, _vertex_buffers);
+}
 
 void Fractal::draw()
 {
