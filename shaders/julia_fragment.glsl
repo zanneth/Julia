@@ -46,6 +46,23 @@ complex multiply_complex(complex c1, complex c2)
     return complex(real, imaginary);
 }
 
+complex exponent_complex(complex c1, int exp)
+{
+    if (exp == 0) {
+        return complex(1.0, 0.0);
+    } else if (exp == 1) {
+        return c1;
+    }
+    
+    /* GLSL doesn't allow recursion, which stinks */
+    complex result = complex(1.0, 0.0);
+    while (exp > 0) {
+        result = multiply_complex(c1, result);
+        exp--;
+    }
+    return result;
+}
+
 float distance_complex(complex c1)
 {
     return sqrt(c1.real * c1.real + c1.imaginary * c1.imaginary);
@@ -53,8 +70,8 @@ float distance_complex(complex c1)
 
 void apply_function(inout complex num)
 {
-    /* f(z) = z^2 + C */
-    complex result = add_complex(multiply_complex(num, num), JULIA_CONSTANT);
+    /* f(z) = z^3 + C */
+    complex result = add_complex(exponent_complex(num, 3), JULIA_CONSTANT);
     num = result;
 }
 
@@ -99,7 +116,7 @@ complex get_point(vec2 screen_coord)
     vec2 complex_pt;
     complex_pt.x = (screen_coord.x / viewport_size.x) - 0.5;
     complex_pt.y = (screen_coord.y / viewport_size.y) - 0.5;
-	complex_pt *= 2.0; /* scale down a little */
+    complex_pt *= 2.0; /* scale down a little */
     
     complex result = complex(complex_pt.x, complex_pt.y);
     return result;
@@ -108,6 +125,6 @@ complex get_point(vec2 screen_coord)
 void main()
 {
     complex pt = get_point(vec2(gl_FragCoord));
-    color_palette palette = color_palette(vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
+    color_palette palette = color_palette(vec3(1.0, 0.0, 1.0), vec3(1.0, 1.0, 0.0));
     gl_FragColor = vec4(compute_color(pt, palette), 1.0);
 }

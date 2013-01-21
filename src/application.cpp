@@ -67,6 +67,7 @@ void Application::reshape_callback(int width, int height)
 {
     _viewport_size = { width, height };
     glViewport(0, 0, (GLsizei) width, (GLsizei) height);
+    _current_fractal->set_projection_dirty(true);
 }
 
 #pragma mark - Internal

@@ -78,6 +78,7 @@ bool ShaderProgram::bind_attribute(VertexAttribute attrib, std::string name)
         _attrib_map[attrib] = name;
         success = true;
     }
+    
     return success;
 }
 
@@ -116,6 +117,25 @@ bool ShaderProgram::use_program()
         glUseProgram(_program);
     }
     return result;
+}
+
+GLint ShaderProgram::get_uniform(std::string name)
+{
+    GLint uniform = -1;
+    
+    if (_linked) {
+        auto uniform_itr = _uniform_map.find(name);
+        if (uniform_itr != _uniform_map.end()) {
+            uniform = uniform_itr->second;
+        } else {
+            uniform = glGetUniformLocation(_program, name.c_str());
+            if (uniform != -1) {
+                _uniform_map[name] = uniform;
+            }
+        }
+    }
+    
+    return uniform;
 }
 
 } // namespace julia

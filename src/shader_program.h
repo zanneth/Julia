@@ -38,10 +38,13 @@ public:
     bool link_program();
     bool use_program();
     
+    GLint get_uniform(std::string name);
+    
 protected:
     GLuint _program;
     std::vector<GLuint> _shaders;
     std::map<GLuint, std::string> _attrib_map;
+    std::map<std::string, GLint> _uniform_map;
     bool _linked;
 };
 
