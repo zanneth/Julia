@@ -149,7 +149,7 @@
 		0C6D0A6F16A91CDA009C37B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Charles Magahern";
 			};
 			buildConfigurationList = 0C6D0A7216A91CDA009C37B4 /* Build configuration list for PBXProject "julia" */;
