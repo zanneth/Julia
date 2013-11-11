@@ -6,6 +6,7 @@
  */
 
 #include "application.h"
+#include "bmp_file.h"
 
 int main(int argc, const char **argv)
 {

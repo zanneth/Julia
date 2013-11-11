@@ -10,6 +10,7 @@
 		0C6D0AA316A92BEA009C37B4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA216A92BEA009C37B4 /* OpenGL.framework */; };
 		0C6D0AA516A92BEF009C37B4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6D0AA416A92BEF009C37B4 /* GLUT.framework */; };
 		0C7FCD4B16ACDE6800719CF5 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C7FCD4916ACDE6800719CF5 /* utility.cpp */; };
+		0CAE27F316BF6586005FB738 /* bmp_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE27F116BF6586005FB738 /* bmp_file.cpp */; };
 		0CFC1AFA16AB78960045B764 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF016AB78960045B764 /* application.cpp */; };
 		0CFC1AFB16AB78960045B764 /* fractal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF216AB78960045B764 /* fractal.cpp */; };
 		0CFC1AFC16AB78960045B764 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC1AF516AB78960045B764 /* main.cpp */; };
@@ -39,6 +40,8 @@
 		0C6D0AA416A92BEF009C37B4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		0C7FCD4916ACDE6800719CF5 /* utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		0C7FCD4A16ACDE6800719CF5 /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		0CAE27F116BF6586005FB738 /* bmp_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bmp_file.cpp; sourceTree = "<group>"; };
+		0CAE27F216BF6586005FB738 /* bmp_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bmp_file.h; sourceTree = "<group>"; };
 		0CFC1AF016AB78960045B764 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 		0CFC1AF116AB78960045B764 /* application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = application.h; sourceTree = "<group>"; };
 		0CFC1AF216AB78960045B764 /* fractal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fractal.cpp; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				0CFC1AF116AB78960045B764 /* application.h */,
 				0CFC1AF016AB78960045B764 /* application.cpp */,
+				0CAE27F216BF6586005FB738 /* bmp_file.h */,
+				0CAE27F116BF6586005FB738 /* bmp_file.cpp */,
 				0CFC1AF316AB78960045B764 /* fractal.h */,
 				0CFC1AF216AB78960045B764 /* fractal.cpp */,
 				0CFC1B0916AB8E1D0045B764 /* julia_fractal.h */,
@@ -180,6 +185,7 @@
 				0CFC1AFD16AB78960045B764 /* shader_program.cpp in Sources */,
 				0CFC1B0A16AB8E1D0045B764 /* julia_fractal.cpp in Sources */,
 				0C7FCD4B16ACDE6800719CF5 /* utility.cpp in Sources */,
+				0CAE27F316BF6586005FB738 /* bmp_file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

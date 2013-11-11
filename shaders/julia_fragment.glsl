@@ -26,7 +26,10 @@ struct color_palette {
 /* constants */
 const float ESCAPE_RADIUS = 2.0;
 const int NUM_CYCLES = 100;
-const complex JULIA_CONSTANT = complex(-0.47, 0.56); /* can be any arbitrary value */
+
+/* these are arbitrary values that comprise the equation used to generate the julia set. */
+const int EQUATION_EXPONENT = 3;
+const complex EQUATION_CONSTANT = complex(-0.47, 0.56);
 
 complex add_complex(complex c1, complex c2)
 {
@@ -71,39 +74,54 @@ float distance_complex(complex c1)
 void apply_function(inout complex num)
 {
     /* f(z) = z^3 + C */
-    complex result = add_complex(exponent_complex(num, 3), JULIA_CONSTANT);
+    complex result = add_complex(exponent_complex(num, EQUATION_EXPONENT), EQUATION_CONSTANT);
     num = result;
 }
 
-vec3 compute_color(complex pt, color_palette palette)
+vec3 color_for_iterations(int num_iterations)
+{
+    vec3 color;
+    
+    if (num_iterations == 1) {
+        color = vec3(1.0, 0.0, 0.0);
+    } else if (num_iterations == 2) {
+        color = vec3(0.0, 1.0, 0.0);
+    } else if (num_iterations == 3) {
+        color = vec3(0.0, 0.0, 1.0);
+    } else if (num_iterations == 4) {
+        color = vec3(1.0, 1.0, 0.0);
+    } else if (num_iterations == 5) {
+        color = vec3(0.0, 1.0, 1.0);
+    } else if (num_iterations == 6) {
+        color = vec3(1.0, 0.0, 1.0);
+    } else {
+        color = vec3(0.0, 0.0, 0.0);
+    }
+    
+    return color;
+}
+
+vec3 compute_color_alt(complex pt, color_palette palette)
 {
     vec3 final_color;
     
     /* apply the function above multiple times until the value "escapes". when it
        does, calculate how quickly it escaped based on its distance after stopping. */
     complex result = pt;
-    bool did_escape = false;
-    float initial_distance = distance_complex(pt);
-    float first_step_distance = 0.0;
-    for (int i = 0; i < NUM_CYCLES; ++i) {
+    int iteration;
+    for (iteration = 0; iteration < NUM_CYCLES; ++iteration) {
         apply_function(result);
         
         float distance = distance_complex(result);
-        if (i == 0) {
-            first_step_distance = distance;
-        }
-        
         if (distance >= ESCAPE_RADIUS) {
-            did_escape = true;
             break;
         }
     }
     
-    if (!did_escape) {
-        /* value is bounded with this function. color the pixel black */
+    if (iteration >= NUM_CYCLES) {
         final_color = vec3(0.0, 0.0, 0.0);
     } else {
-        float interp_weight = (first_step_distance - initial_distance) / first_step_distance;
+        float interp_weight = float(iteration) / (float(NUM_CYCLES) / 2.0);
         final_color = mix(palette.begin_color, palette.end_color, interp_weight);
     }
     
@@ -116,7 +134,6 @@ complex get_point(vec2 screen_coord)
     vec2 complex_pt;
     complex_pt.x = (screen_coord.x / viewport_size.x) - 0.5;
     complex_pt.y = (screen_coord.y / viewport_size.y) - 0.5;
-    complex_pt *= 2.0; /* scale down a little */
     
     complex result = complex(complex_pt.x, complex_pt.y);
     return result;
@@ -126,5 +143,5 @@ void main()
 {
     complex pt = get_point(vec2(gl_FragCoord));
     color_palette palette = color_palette(vec3(1.0, 0.0, 1.0), vec3(1.0, 1.0, 0.0));
-    gl_FragColor = vec4(compute_color(pt, palette), 1.0);
+    gl_FragColor = vec4(compute_color_alt(pt, palette), 1.0);
 }
