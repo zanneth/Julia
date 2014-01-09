@@ -18,7 +18,8 @@ class Fractal;
 
 class Application {
 public:
-    static Application* instance();
+    Application();
+    ~Application();
     
     Size2u get_viewport_size() const { return _viewport_size; }
     
@@ -27,14 +28,10 @@ public:
     void reshape_callback(int width, int height);
     
 private:
-    Application();
-    ~Application();
-    
     void _initialize_glut(int argc, char **argv);
     void _initialize_callbacks();
 
 protected:
-    std::vector<std::string> _arguments;
     Size2u _viewport_size;
     unsigned _glut_window_handle;
     Fractal *_current_fractal;

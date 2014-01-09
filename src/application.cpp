@@ -9,18 +9,14 @@
 #include "fractal.h"
 #include "julia_fractal.h"
 #include "gl_includes.h"
-
+#include <cstdio>
 #include <cstdlib>
 #include <functional>
 #include <iostream>
 
 namespace julia {
 
-Application* Application::instance()
-{
-    static Application __currentapp;
-    return &__currentapp;
-}
+static Application *__current_application = NULL;
 
 Application::Application() :
     _viewport_size({1024, 768}),
@@ -36,19 +32,33 @@ Application::~Application()
 
 void Application::run(int argc, const char **argv)
 {
-    for (unsigned i = 0; i < argc; ++i) {
-        _arguments.push_back(argv[i]);
-    }
+    __current_application = this;
     
     // initial setup
     _initialize_glut(argc, const_cast<char**>(argv));
-    _initialize_callbacks();
     
     // load a fractal
     _current_fractal = new JuliaFractal();
     
-    // start main run loop
-    glutMainLoop();
+    if (argc < 2) {
+        // start as application if no CLI args given
+        _initialize_callbacks();
+        glutMainLoop();
+    } else if (argc == 4) {
+        int width = atoi(argv[1]);
+        int height = atoi(argv[2]);
+        const char *output_file = argv[3];
+        
+        printf("Saving fractal to %s...\n", output_file);
+        bool success = _current_fractal->save_jpeg({width, height}, output_file);
+        if (success) {
+            printf("Successfully saved fractal\n");
+        } else {
+            printf("Failed to save fractal to file\n");
+        }
+    } else {
+        printf("Usage: %s image_width image_height output_file\n", argv[0]);
+    }
 }
 
 void Application::display_callback()
@@ -81,8 +91,8 @@ void Application::_initialize_glut(int argc, char **argv)
 
 void Application::_initialize_callbacks()
 {
-    glutDisplayFunc([]{ Application::instance()->display_callback(); });
-    glutReshapeFunc([](int width, int height){ Application::instance()->reshape_callback(width, height); });
+    glutDisplayFunc([]{ __current_application->display_callback(); });
+    glutReshapeFunc([](int width, int height){ __current_application->reshape_callback(width, height); });
 }
 
 } // namespace julia

@@ -6,12 +6,11 @@
  */
 
 #include "application.h"
-#include "bmp_file.h"
 
 int main(int argc, const char **argv)
 {
-    julia::Application *app = julia::Application::instance();
-    app->run(argc, argv);
+    julia::Application app;
+    app.run(argc, argv);
     
     return 0;
 }
