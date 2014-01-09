@@ -13,6 +13,7 @@
 namespace julia {
 
 typedef std::array<GLfloat, 4*4> Matrix4f;
+typedef std::pair<unsigned, unsigned> Size2u;
 
 class Util {
 public:

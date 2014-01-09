@@ -10,7 +10,7 @@
 #include "gl_includes.h"
 #include "shader_program.h"
 #include "utility.h"
-
+#include <algorithm>
 #include <memory>
 
 namespace julia {
@@ -28,16 +28,17 @@ public:
     
     ShaderProgramRef get_shader_program() const { return _shader_program; }
     void set_projection_dirty(bool dirty) { _projection_dirty = dirty; }
+    
+    bool save_jpeg(Size2u resolution, std::string path);
    
-    virtual void before_draw() {}
-    virtual void after_draw() {}
     virtual void load_shaders(ShaderProgramRef program) {}
-    void draw();
+    void draw(Size2u viewport_size);
 
 private:
     void _setup_buffers();
     void _setup_shaders();
     
+    void _update_viewport(Size2u viewport_size);
     void _update_projection();
     void _update_modelview();
 

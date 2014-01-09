@@ -142,6 +142,6 @@ complex get_point(vec2 screen_coord)
 void main()
 {
     complex pt = get_point(vec2(gl_FragCoord));
-    color_palette palette = color_palette(vec3(1.0, 0.0, 1.0), vec3(1.0, 1.0, 0.0));
+    color_palette palette = color_palette(vec3(0.0, 0.0, 0.0), vec3(1.0, 0.2, 0.0));
     gl_FragColor = vec4(compute_color_alt(pt, palette), 1.0);
 }

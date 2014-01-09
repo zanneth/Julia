@@ -18,7 +18,6 @@ public:
     ~JuliaFractal();
     
     void load_shaders(ShaderProgramRef program) override;
-    void before_draw() override;
 };
 
 } // namespace julia

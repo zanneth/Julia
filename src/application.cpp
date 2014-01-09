@@ -23,7 +23,7 @@ Application* Application::instance()
 }
 
 Application::Application() :
-    _viewport_size({ 1024, 768 }),
+    _viewport_size({1024, 768}),
     _current_fractal(nullptr)
 {}
 
@@ -57,7 +57,7 @@ void Application::display_callback()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     if (_current_fractal) {
-        _current_fractal->draw();
+        _current_fractal->draw(_viewport_size);
     }
     
     glutSwapBuffers();
@@ -65,8 +65,7 @@ void Application::display_callback()
 
 void Application::reshape_callback(int width, int height)
 {
-    _viewport_size = { width, height };
-    glViewport(0, 0, (GLsizei) width, (GLsizei) height);
+    _viewport_size = {width, height};
     _current_fractal->set_projection_dirty(true);
 }
 
